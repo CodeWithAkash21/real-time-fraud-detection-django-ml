@@ -1,83 +1,75 @@
-# Real-Time Fraud Detection System
+<h1 align="center">🚨 Real-Time Fraud Detection System</h1>
 
-## 🎥 Demo Preview
+<p align="center">
+A production-grade Machine Learning fraud detection system built with Django, Django REST Framework, and Scikit-learn.
+</p>
 
 <p align="center">
   <img src="screenshots/dashboard.png" width="90%">
 </p>
 
-A production-grade fraud detection system using Django and Scikit-learn, trained on the Kaggle Credit Card Fraud Detection dataset (284k transactions).
+---
+
+## 🎯 Overview
+
+This project is a **real-time fraud detection system** designed to identify fraudulent credit card transactions using Machine Learning.  
+
+The system integrates a trained ML model into a Django backend, exposing REST APIs for real-time prediction while storing transaction data and analytics for monitoring.
+
+The model is trained using the **Kaggle Credit Card Fraud Detection dataset** containing over **284,000 transactions** with highly imbalanced classes.
+
+---
 
 ## 📸 Project Screenshots
 
-### Live Transaction Detection
+### 🔹 Live Transaction Detection
 <p align="center">
   <img src="screenshots/live-detection.png" width="90%">
 </p>
 
-### Executive Dashboard
+### 🔹 Executive Dashboard
 <p align="center">
   <img src="screenshots/dashboard.png" width="90%">
 </p>
 
-## Features
-- **Real-Time Inference**: <100ms response time using `RandomForestClassifier`.
-- **Handling Imbalance**: `class_weight='balanced'` and RobustScaler.
-- **API**: RESTful endpoint via Django REST Framework.
-- **Persistence**: Transactions and predictions stored in PostgreSQL.
-- **Deployment**: Dockerized with Gunicorn.
+---
 
-## Setup
+## 🚀 Features
 
-### 1. Prerequisites
-- Python 3.9+
-- Docker & Docker Compose (optional but recommended)
+- ✅ Real-time fraud prediction (<100ms inference)
+- ✅ RandomForestClassifier-based ML model
+- ✅ Handles class imbalance using `class_weight='balanced'`
+- ✅ Feature scaling using RobustScaler
+- ✅ REST API powered by Django REST Framework
+- ✅ Transaction storage and prediction logging
+- ✅ Dockerized deployment
+- ✅ Modular ML pipeline
+- ✅ Dashboard for monitoring transactions
 
-### 2. Local Setup
-1. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. **Train Model**:
-   ```bash
-   # Ensure data/creditcard.csv exists
-   python ml_engine/train_model.py
-   ```
-3. **Run Migrations**:
-   ```bash
-   python manage.py migrate
-   ```
-4. **Create Superuser**:
-   ```bash
-   python create_superuser.py
-   ```
-5. **Start Server**:
-   ```bash
-   python manage.py runserver
-   ```
+---
 
-### 3. Docker Deployment
-```bash
-docker-compose up --build
-```
+## 🧠 Machine Learning Pipeline
 
-## API Usage
-**POST** `/api/detect/`
+1. Dataset preprocessing and cleaning
+2. Feature scaling using RobustScaler
+3. Handling imbalanced dataset
+4. Model training using Random Forest
+5. Model serialization (`fraud_model.pkl`)
+6. Real-time inference via API
 
-**Request**:
-```json
-{
-    "transaction_id": "tx_123",
-    "amount": 250.00,
-    "features": [0.1, -1.2, ... (V1-V28)]
-}
-```
+---
 
-**Response**:
-```json
-{
-    "transaction_id": "tx_123",
-    "fraud_probability": 0.052,
-    "fraud_detected": false
-}
-```
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Backend | Django, Django REST Framework |
+| Machine Learning | Scikit-learn |
+| Database | PostgreSQL / SQLite |
+| Frontend | HTML, CSS, JavaScript |
+| Deployment | Docker, Gunicorn |
+| Version Control | Git & GitHub |
+
+---
+
+## 📂 Project Structure
