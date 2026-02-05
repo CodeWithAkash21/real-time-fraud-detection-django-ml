@@ -86,3 +86,30 @@ The model is trained using the Kaggle Credit Card Fraud Detection dataset contai
 ---
 
 ## 📂 Project Structure
+
+real-time-fraud-detection/
+├── fraud_backend/
+│ ├── settings.py
+│ ├── urls.py
+│ └── wsgi.py
+│
+├── transactions/
+│ ├── models.py
+│ ├── views.py
+│ ├── serializers.py
+│ └── ml_utils.py
+│
+├── ml_engine/
+│ ├── train_model.py
+│ └── fraud_model.pkl
+│
+├── frontend/
+│ ├── index.html
+│ ├── dashboard.js
+│ └── styles.css
+│
+├── screenshots/
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── manage.py
