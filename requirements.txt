@@ -1,0 +1,11 @@
+django
+djangorestframework
+pandas
+numpy
+scikit-learn
+joblib
+gunicorn
+psycopg2-binary
+python-dotenv
+dj-database-url
+django-cors-headers

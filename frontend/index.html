@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudGuard AI - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo-area">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2-1v6h-2v-6zm-2 0L8 10v6h2v-6z"></path>
+                </svg>
+            </div>
+            <span>FraudGuard</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item active">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                Overview
+            </a>
+            <a href="detect.html" class="nav-item">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                Live Detection
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <header class="top-header">
+            <div class="page-title">
+                <h1>Executive Dashboard</h1>
+            </div>
+            <div class="status-badge">
+                <div class="pulse-dot"></div>
+                System Operational
+            </div>
+        </header>
+
+        <div class="content-area">
+
+            <!-- KPIs -->
+            <div class="grid-3">
+                <div class="card">
+                    <div class="kpi-label">Total Transactions</div>
+                    <div class="kpi-value" id="kpi-total">--</div>
+                    <div class="kpi-sub">Last 30 Days</div>
+                </div>
+                <div class="card">
+                    <div class="kpi-label">Fraud Detected</div>
+                    <div class="kpi-value text-danger" id="kpi-fraud">--</div>
+                    <div class="kpi-sub">High Risk Events</div>
+                </div>
+                <div class="card">
+                    <div class="kpi-label">Current Risk Rate</div>
+                    <div class="kpi-value text-success" id="kpi-rate">--%</div>
+                    <div class="kpi-sub">Global Average</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="grid-2-1">
+                <div class="card">
+                    <div class="table-header" style="padding: 0 0 1rem 0; background: none; border: none;">
+                        <h3>Transaction Volume</h3>
+                    </div>
+                    <div style="height: 300px; position: relative;">
+                        <canvas id="volumeChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="table-header" style="padding: 0 0 1rem 0; background: none; border: none;">
+                        <h3>Risk Distribution</h3>
+                    </div>
+                    <div style="height: 300px; position: relative;">
+                        <canvas id="fraudChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Recent Transactions</h3>
+                    <button class="btn btn-small" onclick="fetchTransactions()">Refresh Data</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Amount</th>
+                            <th>Time</th>
+                            <th>Features (V1..)</th>
+                            <th>Risk Score</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tx-table-body">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: #64748b;">Loading data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

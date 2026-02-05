@@ -1,0 +1,16 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+venv/
+
+# Database
+db.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+data/creditcard.csv
