@@ -1,22 +1,32 @@
 <h1 align="center">🚨 Real-Time Fraud Detection System</h1>
 
 <p align="center">
-A production-grade Machine Learning fraud detection system built with Django, Django REST Framework, and Scikit-learn.
+A Django + Machine Learning web application for real-time fraud detection, transaction risk analysis, and API-based inference.
 </p>
+
+---
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/Django-Backend-green?style=for-the-badge&logo=django">
+  <img src="https://img.shields.io/badge/Django%20REST%20Framework-API-red?style=for-the-badge&logo=django">
+  <img src="https://img.shields.io/badge/Machine%20Learning-ScikitLearn-orange?style=for-the-badge&logo=scikitlearn">
+  <img src="https://img.shields.io/badge/Docker-Enabled-blue?style=for-the-badge&logo=docker">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge">
+</p>
+
+---
+
+## 🎥 Demo Preview
 
 <p align="center">
   <img src="screenshots/dashboard.png" width="90%">
 </p>
 
----
-
-## 🎯 Overview
-
-This project is a **real-time fraud detection system** designed to identify fraudulent credit card transactions using Machine Learning.  
-
-The system integrates a trained ML model into a Django backend, exposing REST APIs for real-time prediction while storing transaction data and analytics for monitoring.
-
-The model is trained using the **Kaggle Credit Card Fraud Detection dataset** containing over **284,000 transactions** with highly imbalanced classes.
+<p align="center">
+Executive dashboard showing transaction analytics and fraud risk distribution.
+</p>
 
 ---
 
@@ -34,41 +44,44 @@ The model is trained using the **Kaggle Credit Card Fraud Detection dataset** co
 
 ---
 
-## 🚀 Features
+## 🧠 Project Overview
 
-- ✅ Real-time fraud prediction (<100ms inference)
-- ✅ RandomForestClassifier-based ML model
-- ✅ Handles class imbalance using `class_weight='balanced'`
-- ✅ Feature scaling using RobustScaler
-- ✅ REST API powered by Django REST Framework
-- ✅ Transaction storage and prediction logging
-- ✅ Dockerized deployment
-- ✅ Modular ML pipeline
-- ✅ Dashboard for monitoring transactions
+This project demonstrates real-world deployment of a Machine Learning fraud detection model inside a Django web application.
+
+The system exposes REST APIs for real-time fraud prediction, processes transaction data through a trained ML model, and stores results for analytics and monitoring. The architecture simulates a production ML workflow including preprocessing, inference, persistence, and dashboard visualization.
+
+The model is trained using the Kaggle Credit Card Fraud Detection dataset containing over 284,000 transactions.
 
 ---
 
-## 🧠 Machine Learning Pipeline
+## ⚙️ Tech Stack
 
-1. Dataset preprocessing and cleaning
-2. Feature scaling using RobustScaler
-3. Handling imbalanced dataset
-4. Model training using Random Forest
-5. Model serialization (`fraud_model.pkl`)
-6. Real-time inference via API
-
----
-
-## 🛠 Tech Stack
+<p align="center">
+<img src="https://skillicons.dev/icons?i=python,django,html,css,js,git,github,docker,vscode"/>
+</p>
 
 | Layer | Technology |
 |---|---|
-| Backend | Django, Django REST Framework |
-| Machine Learning | Scikit-learn |
-| Database | PostgreSQL / SQLite |
+| Backend | Django + Django REST Framework |
+| Machine Learning | Scikit-learn (RandomForestClassifier) |
 | Frontend | HTML, CSS, JavaScript |
+| Database | PostgreSQL / SQLite |
 | Deployment | Docker, Gunicorn |
 | Version Control | Git & GitHub |
+
+---
+
+## 🚀 Features
+
+- ✅ Real-time fraud prediction (<100ms inference)
+- ✅ RandomForestClassifier ML model
+- ✅ Handles class imbalance using `class_weight='balanced'`
+- ✅ Feature scaling using RobustScaler
+- ✅ REST API for transaction detection
+- ✅ Transaction logging & persistence
+- ✅ Executive analytics dashboard
+- ✅ Dockerized deployment
+- ✅ Modular ML pipeline
 
 ---
 
